@@ -1,0 +1,60 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+
+    "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid === $uid",
+        ".write": "auth != null && auth.uid === $uid",
+        "name":  { ".validate": "newData.isString() && newData.val().length <= 100" },
+        "email": { ".validate": "newData.isString() && newData.val().length <= 200" },
+        "phone": { ".validate": "newData.isString() && newData.val().length <= 20" },
+        "$other": { ".validate": false }
+      }
+    },
+
+    "umbrellaCover": {
+      ".read": "auth != null",
+
+      "rainStatus": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isString() && (newData.val() === 'RAIN' || newData.val() === 'NO_RAIN')"
+      },
+      "coverStatus": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isString() && (newData.val() === 'OPEN' || newData.val() === 'CLOSED')"
+      },
+      "controlMode": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isString() && (newData.val() === 'AUTO' || newData.val() === 'MANUAL')"
+      },
+      "command": {
+        ".write": "auth != null",
+        ".validate": "newData.isString() && (newData.val() === 'OPEN' || newData.val() === 'CLOSE' || newData.val() === 'AUTO' || newData.val() === 'MANUAL' || newData.val() === 'NONE')"
+      },
+      "updatedAt": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isNumber()"
+      },
+      "rainLevel": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isNumber() && newData.val() >= 0 && newData.val() <= 4095"
+      },
+      "$other": { ".validate": false }
+    },
+
+    "device": {
+      ".read": "auth != null",
+      "lastSeen": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isNumber()"
+      },
+      "info": {
+        ".write": "auth != null && auth.token.email === 'device@pluvia.app'",
+        ".validate": "newData.isString() || newData.isNumber() || newData.isBoolean()"
+      },
+      "$other": { ".validate": false }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "umbrellaCover": {
+    "rainStatus": "NO_RAIN",
+    "coverStatus": "CLOSED",
+    "controlMode": "AUTO",
+    "command": "NONE",
+    "updatedAt": 0
+  }
+}

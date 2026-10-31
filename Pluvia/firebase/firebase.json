@@ -1,0 +1,14 @@
+{
+  "database": {
+    "instance": "pluvia-app-default-rtdb",
+    "rules": "database.rules.json"
+  },
+  "emulators": {
+    "database": {
+      "port": 9000
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

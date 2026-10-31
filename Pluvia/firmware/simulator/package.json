@@ -1,0 +1,15 @@
+{
+  "name": "pluvia-simulator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Simulated ESP32 for Pluvia. Runs the real firmware decision logic against the live Firebase project, so the MVP can be demonstrated before any hardware exists.",
+  "main": "demo.js",
+  "scripts": {
+    "test": "node parity.test.js",
+    "demo": "node demo.js",
+    "interactive": "node interactive.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

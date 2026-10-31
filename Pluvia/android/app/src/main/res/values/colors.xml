@@ -1,0 +1,12 @@
+<resources>
+    <color name="rainq_primary">#0D6EFD</color>
+    <color name="rainq_primary_dark">#0B5ED7</color>
+    <color name="rainq_background">#FFFFFF</color>
+
+    <!-- Status colors -->
+    <color name="pluvia_open">#2E9E5B</color>
+    <color name="pluvia_closed">#6B7A8C</color>
+    <color name="pluvia_rain">#0D6EFD</color>
+    <color name="pluvia_dry">#E8A317</color>
+    <color name="pluvia_offline">#D64545</color>
+</resources>

@@ -1,0 +1,7 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.RainQ" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/rainq_primary</item>
+        <item name="colorPrimaryVariant">@color/rainq_primary_dark</item>
+        <item name="android:windowBackground">@color/rainq_background</item>
+    </style>
+</resources>
